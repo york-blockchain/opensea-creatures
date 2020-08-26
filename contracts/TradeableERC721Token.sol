@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
-import 'openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol';
-import 'openzeppelin-solidity/contracts/ownership/Ownable.sol';
+import '@openzeppelin/contracts/token/ERC721/ERC721Full.sol';
+import '@openzeppelin/contracts/ownership/Ownable.sol';
 import './Strings.sol';
 
 contract OwnableDelegateProxy { }
@@ -11,10 +11,10 @@ contract ProxyRegistry {
 }
 
 /**
- * @title ERC721Tradable
- * ERC721Tradable - ERC721 contract that whitelists a trading address, and has minting functionality.
+ * @title TradeableERC721Token
+ * TradeableERC721Token - ERC721 contract that whitelists a trading address, and has minting functionality.
  */
-contract ERC721Tradable is ERC721Full, Ownable {
+contract TradeableERC721Token is ERC721Full, Ownable {
   using Strings for string;
 
   address proxyRegistryAddress;
@@ -35,7 +35,7 @@ contract ERC721Tradable is ERC721Full, Ownable {
   }
 
   /**
-    * @dev calculates the next token ID based on value of _currentTokenId
+    * @dev calculates the next token ID based on value of _currentTokenId 
     * @return uint256 for the next token ID
     */
   function _getNextTokenId() private view returns (uint256) {
@@ -43,7 +43,7 @@ contract ERC721Tradable is ERC721Full, Ownable {
   }
 
   /**
-    * @dev increments the value of _currentTokenId
+    * @dev increments the value of _currentTokenId 
     */
   function _incrementTokenId() private  {
     _currentTokenId++;
