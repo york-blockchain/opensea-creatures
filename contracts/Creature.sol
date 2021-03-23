@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/ownership/Ownable.sol";
  */
 contract Creature is TradeableERC721Token {
 
-  constructor(address _proxyRegistryAddress) TradeableERC721Token("Creature-MJ", "MJ7", _proxyRegistryAddress) public {  }
+  constructor(address _proxyRegistryAddress) TradeableERC721Token("Creature", "MJ7C", _proxyRegistryAddress) public {  }
 
   function baseTokenURI() public view returns (string memory) {
     return "https://opensea-creatures-api.herokuapp.com/api/creature/";

@@ -66,6 +66,9 @@ async function main() {
     // Creatures issued directly to the owner.
     let mints = [];
 
+    const gasEstimate = await nftContract.estimateGas.mintTo(OWNER_ADDRESS);
+    console.log(gasEstimate);
+
     for (var i = 0; i < NUM_CREATURES; i++) {
       mints.push(nftContract.mintTo(OWNER_ADDRESS,{gasLimit:10000000}));
     }
